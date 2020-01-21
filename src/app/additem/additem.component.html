@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-header>
+    <h2>Add entities</h2>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <mat-form-field>
+        <mat-icon matPrefix>search</mat-icon>
+        <mat-icon matSuffix>filter_list</mat-icon>
+        <input matInput placeholder="Search entity" autofocus>
+      </mat-form-field>
+    </section>
+    <mat-divider></mat-divider>
+    <mat-selection-list #entities>
+      <mat-list-option checkboxPosition="before" *ngFor="let item of items"
+                       value="{{item.idItem}}" selected="{{item.checkedItem}}">
+        <mat-card-title>{{item.nameItem}}</mat-card-title>
+        <mat-card-subtitle>{{item.typeItem}}</mat-card-subtitle>
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card-content>
+  <mat-card-footer>
+    <button mat-flat-button color="accent" (click)="connectItems(entities._value)">
+      CONNECT
+    </button>
+  </mat-card-footer>
+</mat-card>
+
+<p>
+  Options selected: {{entities.selectedOptions.selected.length}}
+</p>
+<!--
+<p *ngFor="let i of entities.selectedOptions.selected.values()">
+  IdItem: {{i.value}} - {{items[i.value-1].checkedItem}}
+</p>
+-->
