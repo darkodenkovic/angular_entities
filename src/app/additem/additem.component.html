@@ -13,14 +13,14 @@
     <mat-divider></mat-divider>
     <mat-selection-list #entities>
       <mat-list-option checkboxPosition="before" *ngFor="let item of items"
-                       value="{{item.idItem}}" selected="{{item.checkedItem}}">
+                       [value]="item.idItem" [selected]="item.checkedItem">
         <mat-card-title>{{item.nameItem}}</mat-card-title>
         <mat-card-subtitle>{{item.typeItem}}</mat-card-subtitle>
       </mat-list-option>
     </mat-selection-list>
   </mat-card-content>
   <mat-card-footer>
-    <button mat-flat-button color="accent" (click)="connectItems(entities._value)">
+    <button mat-flat-button color="accent" (click)="connectItems(entities.selectedOptions.selected)">
       CONNECT
     </button>
   </mat-card-footer>
@@ -29,8 +29,3 @@
 <p>
   Options selected: {{entities.selectedOptions.selected.length}}
 </p>
-<!--
-<p *ngFor="let i of entities.selectedOptions.selected.values()">
-  IdItem: {{i.value}} - {{items[i.value-1].checkedItem}}
-</p>
--->
