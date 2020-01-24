@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Item} from '../item';
 import {ItemService} from '../item.service';
 import {Router} from '@angular/router';
-import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',

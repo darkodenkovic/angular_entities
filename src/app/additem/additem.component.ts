@@ -21,15 +21,18 @@ export class AdditemComponent implements OnInit {
   ngOnInit() {
     this.getItem();
   }
+
   connectItems(checkedItem): void {
     const itemsId = checkedItem.map(item => item.value);
     this.items.forEach(item => {
       item.checked = false;
       itemsId.forEach(checked => {
-        if (item.id === checked) { item.checked = true; }
+        if (item.id === checked) {
+          item.checked = true;
+        }
       });
       this.itemService.updateItem(item);
     });
-    this.router.navigate(['/home']);
-    }
+    this.router.navigate(['/home']).then();
+  }
 }
