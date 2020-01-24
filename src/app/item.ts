@@ -1,6 +1,6 @@
 export class Item {
-  idItem: number;
-  nameItem: string;
-  typeItem: string;
-  checkedItem: boolean;
+  id: number;
+  name: string;
+  type: string;
+  checked: boolean;
 }

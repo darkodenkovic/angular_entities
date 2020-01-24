@@ -13,9 +13,9 @@
     <mat-divider></mat-divider>
     <mat-selection-list #entities>
       <mat-list-option checkboxPosition="before" *ngFor="let item of items"
-                       [value]="item.idItem" [selected]="item.checkedItem">
-        <mat-card-title>{{item.nameItem}}</mat-card-title>
-        <mat-card-subtitle>{{item.typeItem}}</mat-card-subtitle>
+                       [value]="item.id" [selected]="item.checked">
+        <mat-card-title>{{item.name}}</mat-card-title>
+        <mat-card-subtitle>{{item.type}}</mat-card-subtitle>
       </mat-list-option>
     </mat-selection-list>
   </mat-card-content>

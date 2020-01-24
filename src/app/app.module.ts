@@ -12,12 +12,12 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MAT_CHECKBOX_CLICK_ACTION,
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatDividerModule, MatIconModule,
-  MatInputModule, MatListModule
+    MAT_CHECKBOX_CLICK_ACTION,
+    MatButtonModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatDividerModule, MatExpansionModule, MatIconModule,
+    MatInputModule, MatListModule
 } from '@angular/material';
 
 @NgModule({
@@ -26,27 +26,28 @@ import {
     HomeComponent,
     AdditemComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule,
-    FormsModule,
-    HttpClientModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule,
+        FormsModule,
+        HttpClientModule,
+        // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
 // and returns simulated server responses.
 // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false}
-    ),
-    BrowserAnimationsModule,
-    MatCheckboxModule,
-    MatCardModule,
-    MatInputModule,
-    MatDividerModule,
-    MatButtonModule,
-    MatListModule,
-    MatIconModule,
-  ],
+        HttpClientInMemoryWebApiModule.forRoot(
+            InMemoryDataService, {dataEncapsulation: false}
+        ),
+        BrowserAnimationsModule,
+        MatCheckboxModule,
+        MatCardModule,
+        MatInputModule,
+        MatDividerModule,
+        MatButtonModule,
+        MatListModule,
+        MatIconModule,
+        MatExpansionModule,
+    ],
   providers: [{provide: MAT_CHECKBOX_CLICK_ACTION, useValue: 'check'}],
   bootstrap: [AppComponent]
 })
