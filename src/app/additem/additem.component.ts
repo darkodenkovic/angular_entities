@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-additem',
   templateUrl: './additem.component.html',
-  styleUrls: ['./additem.component.css']
+  styleUrls: ['./additem.component.scss']
 })
 export class AdditemComponent implements OnInit {
   private items: Item[];
