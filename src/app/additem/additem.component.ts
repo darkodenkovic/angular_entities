@@ -24,15 +24,9 @@ export class AdditemComponent implements OnInit {
 
   connectItems(checkedItem): void {
     const itemsId = checkedItem.map(item => item.value);
-    this.items.forEach(item => {
-      item.checked = false;
-      itemsId.forEach(checked => {
-        if (item.id === checked) {
-          item.checked = true;
-        }
-      });
-      this.itemService.updateItem(item);
-    });
+    this.items.map(item => item.checked = false);
+    this.items.filter(item => itemsId.includes(item.id)).map(item => item.checked = true);
+    this.items.map(item => this.itemService.updateItem(item));
     this.router.navigate(['/home']).then();
   }
 }
