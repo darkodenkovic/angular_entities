@@ -1,15 +1,26 @@
-<mat-accordion>
-  <mat-expansion-panel (closed)="panelOpenState = false"
-                       (opened)="panelOpenState = true" [expanded]="true">
-    <mat-expansion-panel-header>
-      <mat-panel-title *ngIf="items.length === 0">Connect entity</mat-panel-title>
-      <mat-panel-title *ngIf="items.length > 0">Connected entities ({{items.length}})</mat-panel-title>
-    </mat-expansion-panel-header>
-    <div *ngFor="let item of items">
-      <h4>{{item.name}}</h4>
-      <p>{{item.type}}</p>
-    </div>
-  </mat-expansion-panel>
-</mat-accordion>
-
+<div class="main">
+  <mat-accordion>
+    <mat-expansion-panel (closed)="panelOpenState = false"
+                         (opened)="panelOpenState = true" [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title *ngIf="items.length === 0">
+          <button class="noConnected" mat-icon-button aria-label="Connect entity" (click)="addItems()">
+            <mat-icon>control_point</mat-icon>
+            Connect entity
+          </button>
+        </mat-panel-title>
+        <mat-panel-title *ngIf="items.length > 0">
+          <button color="primary" mat-icon-button aria-label="Connected entities" (click)="addItems()">
+            <mat-icon>control_point</mat-icon>
+            Connected entities ({{items.length}})
+          </button>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="listConnected" *ngFor="let item of items">
+        <h4>{{item.name}}</h4>
+        <p>{{item.type}}</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
 

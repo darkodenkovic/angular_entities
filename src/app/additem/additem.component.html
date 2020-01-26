@@ -1,29 +1,33 @@
-<mat-card>
-  <mat-card-header>
-    <h2>Add entities</h2>
-  </mat-card-header>
-  <mat-card-content>
-    <section>
-      <mat-form-field>
-        <mat-icon matPrefix>search</mat-icon>
-        <mat-icon matSuffix>filter_list</mat-icon>
-        <label>
-          <input #itemName matInput placeholder="Search entity" autofocus>
-        </label>
-      </mat-form-field>
-    </section>
-    <mat-divider></mat-divider>
-    <mat-selection-list #entities>
-      <mat-list-option checkboxPosition="before" *ngFor="let item of items"
-                       [value]="item.id" [selected]="item.checked">
-        <mat-card-title>{{item.name}}</mat-card-title>
-        <mat-card-subtitle>{{item.type}}</mat-card-subtitle>
-      </mat-list-option>
-    </mat-selection-list>
-  </mat-card-content>
-  <mat-card-footer>
-    <button mat-flat-button color="accent" (click)="connectItems(entities.selectedOptions.selected)">
+<div class="main">
+  <h2>Add entities</h2>
+  <mat-card>
+    <mat-card-content>
+      <section>
+        <mat-form-field>
+          <mat-icon matPrefix>search</mat-icon>
+          <mat-icon matSuffix>filter_list</mat-icon>
+          <label>
+            <input class="search" #itemName matInput placeholder="Search entity" autofocus>
+          </label>
+        </mat-form-field>
+      </section>
+      <mat-divider></mat-divider>
+      <mat-selection-list #entities>
+        <mat-list-option color="primary" checkboxPosition="before" *ngFor="let item of items"
+                         [value]="item.id" [selected]="item.checked">
+          <mat-card-title>{{item.name}}</mat-card-title>
+          <mat-card-subtitle>{{item.type}}</mat-card-subtitle>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-card-content>
+   <!-- <mat-divider></mat-divider>
+    <mat-card-footer>
+
+    </mat-card-footer>-->
+  </mat-card>
+  <div class="bottom">
+    <button mat-flat-button color="primary" (click)="connectItems(entities.selectedOptions.selected)">
       CONNECT
     </button>
-  </mat-card-footer>
-</mat-card>
+  </div>
+</div>

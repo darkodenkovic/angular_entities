@@ -1,0 +1,26 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin-top: 80px;
+}
+button.noConnected{
+  color: darkgray;
+}
+mat-accordion{
+  width: 600px;
+  text-align: center;
+}
+.listConnected {
+  text-align: left;
+  margin-bottom: 20px;
+}
+h4, p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+p {
+  color: darkgray;
+}

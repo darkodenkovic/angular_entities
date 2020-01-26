@@ -1,0 +1,32 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin-top: 80px;
+}
+h2{
+  text-align: center;
+  flex: 1 100%;
+}
+mat-card {
+  width: 600px;
+  text-align: center;
+}
+mat-form-field{
+  width: 100%;
+}
+
+mat-list-option {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.bottom{
+  text-align: center;
+  flex: 1 100%;
+  margin-top: 40px;
+}
+
+
