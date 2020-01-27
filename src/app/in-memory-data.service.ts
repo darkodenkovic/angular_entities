@@ -10,8 +10,8 @@ export class InMemoryDataService implements InMemoryDbService {
     const items = [
       {id: 1, name: 'Arrivals', type: 'BPM', checked: false},
       {id: 2, name: 'Car Wash', type: 'BPM', checked: false},
-      {id: 3, name: 'Maintenance', type: 'Project', checked: true},
-      {id: 4, name: 'Customer Payment', type: 'BPM', checked: true},
+      {id: 3, name: 'Maintenance', type: 'Project', checked: false},
+      {id: 4, name: 'Customer Payment', type: 'BPM', checked: false},
       {id: 5, name: 'Arrivals Database', type: 'Database', checked: false},
       {id: 6, name: 'Calculator', type: 'Application', checked: false},
       {id: 7, name: 'California', type: 'Server', checked: false},

@@ -1,7 +1,6 @@
 <div class="main">
   <mat-accordion>
-    <mat-expansion-panel (closed)="panelOpenState = false"
-                         (opened)="panelOpenState = true" [expanded]="true">
+    <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title *ngIf="items.length === 0">
           <button class="noConnected" mat-icon-button aria-label="Connect entity" (click)="addItems()">

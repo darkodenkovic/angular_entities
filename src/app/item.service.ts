@@ -16,10 +16,6 @@ export class ItemService {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
 
-  getItems(): Observable<Item[]> {
-    return this.http.get<Item[]>(this.itemsUrl);
-  }
-
   getConnectedItems() {
     return this.http.get<Item[]>(this.itemsUrl + '/?checked=true');
   }
@@ -34,5 +30,12 @@ export class ItemService {
       complete() {
       }
     });
+  }
+
+  searchItems(term: string): Observable<Item[]> {
+    if (!term.trim() || term.trim() === '') {
+      return this.http.get<Item[]>(this.itemsUrl);
+    }
+    return this.http.get<Item[]>(`${this.itemsUrl}/?name=${term}`);
   }
 }

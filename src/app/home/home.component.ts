@@ -10,7 +10,6 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   items: Item[];
-  panelOpenState = true;
 
   constructor(private itemService: ItemService, private router: Router) {
   }

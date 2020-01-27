@@ -7,7 +7,8 @@
           <mat-icon matPrefix>search</mat-icon>
           <mat-icon matSuffix>filter_list</mat-icon>
           <label>
-            <input class="search" #itemName matInput placeholder="Search entity" autofocus>
+            <input [(ngModel)]="searchTerm"
+                   matInput placeholder="Search entity" autofocus (ngModelChange)="searchItems()">
           </label>
         </mat-form-field>
       </section>
@@ -20,10 +21,6 @@
         </mat-list-option>
       </mat-selection-list>
     </mat-card-content>
-   <!-- <mat-divider></mat-divider>
-    <mat-card-footer>
-
-    </mat-card-footer>-->
   </mat-card>
   <div class="bottom">
     <button mat-flat-button color="primary" (click)="connectItems(entities.selectedOptions.selected)">

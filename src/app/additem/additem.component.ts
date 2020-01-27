@@ -9,17 +9,18 @@ import {Router} from '@angular/router';
   styleUrls: ['./additem.component.scss']
 })
 export class AdditemComponent implements OnInit {
+  private searchTerm = '';
   private items: Item[];
 
-  private getItem() {
-    this.itemService.getItems().subscribe(item => this.items = item);
+  searchItems() {
+    this.itemService.searchItems(this.searchTerm).subscribe(item => this.items = item);
   }
 
   constructor(private itemService: ItemService, private router: Router) {
   }
 
   ngOnInit() {
-    this.getItem();
+    this.searchItems();
   }
 
   connectItems(checkedItem): void {
